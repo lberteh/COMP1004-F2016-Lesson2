@@ -91,6 +91,7 @@
             this.DiscountPercentTextBox.ReadOnly = true;
             this.DiscountPercentTextBox.Size = new System.Drawing.Size(100, 20);
             this.DiscountPercentTextBox.TabIndex = 5;
+            this.DiscountPercentTextBox.Text = "10.0 %";
             // 
             // DiscountAmountTextBox
             // 
@@ -118,6 +119,7 @@
             this.CalculateButton.TabIndex = 8;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // ExitButton
             // 
@@ -127,6 +129,7 @@
             this.ExitButton.TabIndex = 9;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // InvoiceTotalForm
             // 
