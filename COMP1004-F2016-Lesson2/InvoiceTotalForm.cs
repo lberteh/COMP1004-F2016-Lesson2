@@ -20,6 +20,12 @@ namespace COMP1004_F2016_Lesson2
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            CalculateTotal();
+
+        }
+
+        private void CalculateTotal()
+        {
             // Local variables
             const double DiscountPercent = 0.1;
             double SubTotal;
@@ -34,22 +40,32 @@ namespace COMP1004_F2016_Lesson2
                 Total = SubTotal - DiscountAmount;
 
                 DiscountAmountTextBox.Text = DiscountAmount.ToString("C2");
-                TotalTextBox.Text = Total.ToString("C2");      
+                TotalTextBox.Text = Total.ToString("C2");
             }
             catch (Exception exception)
             {
                 MessageBox.Show("Invalid Data Entered", "Input Error");
                 Debug.WriteLine(exception.Message);
-                SubTotalTextBox.Focus();
-                SubTotalTextBox.SelectAll();
+                ResetSubTotalTextBob();
             }
-
-                       
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void InvoiceTotalForm_Load(object sender, EventArgs e)
+        {
+            ResetSubTotalTextBob();
+
+        }
+
+        private void ResetSubTotalTextBob()
+        {
+            SubTotalTextBox.Focus();
+            SubTotalTextBox.Text = "0";
+            SubTotalTextBox.SelectAll();
         }
     }
 }
